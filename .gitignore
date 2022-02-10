@@ -1,0 +1,16 @@
+*~
+keyhac.exe
+_config.py
+dict/
+doc/
+extension/
+lib/
+license_/
+theme/
+*.lnk
+keyhac.ini
+library.zip
+python38.dll
+readme_en.txt
+readme_ja.txt
+
