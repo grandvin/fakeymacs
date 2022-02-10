@@ -11,6 +11,8 @@
 # 本ファイルはサンプルファイルです。本ファイルに記載のない設定でも、config.py から設定を取り込み、
 # カスタマイズしてご利用ください。
 
+# 仮想キーコード一覧: http://kts.sakaiweb.com/virtualkeycodes.html
+
 ####################################################################################################
 ## 初期設定
 ####################################################################################################
@@ -27,9 +29,9 @@ keymap.setFont("ＭＳ ゴシック", 12)
 # [section-options] --------------------------------------------------------------------------------
 
 # IMEの設定（次の設定のいずれかを有効にする）
-fc.ime = "old_Microsoft_IME"
+# fc.ime = "old_Microsoft_IME"
 # fc.ime = "new_Microsoft_IME"
-# fc.ime = "Google_IME"
+fc.ime = "Google_IME"
 # fc.ime = None
 
 ####################################################################################################
@@ -39,7 +41,7 @@ fc.ime = "old_Microsoft_IME"
 
 # Emacs のキーバインドに“したくない”アプリケーションソフトを指定する
 # （Keyhac のメニューから「内部ログ」を ON にすると processname や classname を確認することができます）
-fc.not_emacs_target    += []
+fc.not_emacs_target    += ["vmware-view.exe"]
 
 # IME の切り替え“のみをしたい”アプリケーションソフトを指定する
 # （指定できるアプリケーションソフトは、not_emacs_target で（除外）指定したものからのみとなります）
@@ -63,6 +65,7 @@ fc.skip_settings_key    = {"keymap_global"    : [], # 全画面共通 Keymap
 # （リストに指定するキーは、Keyhac で指定可能なマルチストロークではないキーとしてください。
 #   Fakeymacs の記法の "M-f" や "Ctl-x d" などの指定はできません。"A-v"、"C-v" などが指定可能です。）
 fc.emacs_exclusion_key  = {"chrome.exe"       : ["C-l", "C-t"],
+                           "vivaldi.exe"      : ["C-l", "C-t"],
                            "msedge.exe"       : ["C-l", "C-t"],
                            "firefox.exe"      : ["C-l", "C-t"],
                            "Code.exe"         : ["C-S-b", "C-S-f", "C-S-p", "C-S-n", "C-S-a", "C-S-e"],
@@ -88,7 +91,8 @@ fc.use_ime_status_balloon = True
 # IME をトグルで切り替えるキーを指定する（複数指定可）
 fc.toggle_input_method_key = []
 fc.toggle_input_method_key += ["C-Yen"]
-fc.toggle_input_method_key += ["C-o"]
+fc.toggle_input_method_key += ["(28)"]
+#fc.toggle_input_method_key += ["C-o"]
 # fc.toggle_input_method_key += ["O-LAlt"]
 
 #---------------------------------------------------------------------------------------------------
@@ -97,11 +101,12 @@ fc.toggle_input_method_key += ["C-o"]
 fc.set_input_method_key = []
 
 ## 日本語キーボードを利用している場合、<無変換> キーで英数入力、<変換> キーで日本語入力となる
-fc.set_input_method_key += [["(29)", "(28)"]]
+#fc.set_input_method_key += [["(29)", "(28)"]]
+fc.set_input_method_key += [["C-(29)", "C-(28)"]]
 
 ## 日本語キーボードを利用している場合、<Ａ> キーで英数入力、<あ> キーで日本語入力となる
 ## （https://docs.microsoft.com/ja-jp/windows-hardware/design/component-guidelines/keyboard-japan-ime）
-fc.set_input_method_key += [["(26)", "(22)"]]
+#fc.set_input_method_key += [["(26)", "(22)"]]
 
 ## LAlt の単押しで英数入力、RAlt の単押しで日本語入力となる
 ## （JetBrains 製の IDE でこの設定を利用するためには、ツールボタンをオンにする必要があるようです。
@@ -223,6 +228,7 @@ if 1:
     # vscode.dev 等、ブラウザで動作する VSCode で本機能を無効とするには、次の４行をコメントアウト
     # してください
     fc.vscode_target += ["chrome.exe",
+                         "vivaldi.exe",
                          "msedge.exe",
                          "firefox.exe",
                          ]

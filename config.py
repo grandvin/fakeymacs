@@ -234,6 +234,7 @@ def configure(keymap):
     # 上記の対策を行う Chromium 系ブラウザのプログラム名称を指定する
     fc.chromium_browser_list = ["chrome.exe",
                                 "msedge.exe",
+                                "vivaldi.exe",  # @sai
                                 ]
 
     # 個人設定ファイルのセクション [section-options] を読み込んで実行する
@@ -791,7 +792,8 @@ def configure(keymap):
             # IME を切り替える
             # （keymap.getWindow().setImeStatus(ime_status) を使わないのは、キーボードマクロの再生時に
             #   影響がでるため）
-            self_insert_command("A-(25)")()
+            # @sai self_insert_command("A-(25)")()
+            self_insert_command("(28)")() # @sai IME の ON/OFF キーをカスタマイズ (「半角/全角」→「変換」)しているため、IME ON/OFF のキー発行関数を上書き
 
             if fakeymacs.is_playing_kmacro:
                 delay(0.2)
@@ -1755,13 +1757,13 @@ def configure(keymap):
     define_key(keymap_emacs, "C-u", universal_argument)
 
     ## 「IME の切り替え」のキー設定
-    define_key(keymap_emacs, "(243)",  toggle_input_method)
-    define_key(keymap_emacs, "(244)",  toggle_input_method)
-    define_key(keymap_emacs, "A-(25)", toggle_input_method)
+    # @sai define_key(keymap_emacs, "(243)",  toggle_input_method)  #半角/全角
+    # @sai define_key(keymap_emacs, "(244)",  toggle_input_method)  #半角/全角
+    # @sai define_key(keymap_emacs, "A-(25)", toggle_input_method)
 
-    define_key(keymap_ime,   "(243)",  toggle_input_method)
-    define_key(keymap_ime,   "(244)",  toggle_input_method)
-    define_key(keymap_ime,   "A-(25)", toggle_input_method)
+    # @sai define_key(keymap_ime,   "(243)",  toggle_input_method)  #半角/全角
+    # @sai define_key(keymap_ime,   "(244)",  toggle_input_method)  #半角/全角
+    # @sai define_key(keymap_ime,   "A-(25)", toggle_input_method)
 
     ## 「ファイル操作」のキー設定
     define_key(keymap_emacs, "Ctl-x C-f", reset_search(reset_undo(reset_counter(reset_mark(find_file)))))
@@ -2073,9 +2075,9 @@ def configure(keymap):
                         define_key2(keymap_ei, mkey, self_insert_command(mkey))
 
         ## 「IME の切り替え」のキー設定
-        define_key(keymap_ei, "(243)",  ei_disable_input_method)
-        define_key(keymap_ei, "(244)",  ei_disable_input_method)
-        define_key(keymap_ei, "A-(25)", ei_disable_input_method)
+        # @sai define_key(keymap_ei, "(243)",  ei_disable_input_method)
+        # @sai define_key(keymap_ei, "(244)",  ei_disable_input_method)
+        # @sai define_key(keymap_ei, "A-(25)", ei_disable_input_method)
 
         ## Escキーの設定
         define_key(keymap_ei, "Esc",           ei_esc)
