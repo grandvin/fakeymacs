@@ -1759,11 +1759,11 @@ def configure(keymap):
     ## 「IME の切り替え」のキー設定
     # @sai define_key(keymap_emacs, "(243)",  toggle_input_method)  #半角/全角
     # @sai define_key(keymap_emacs, "(244)",  toggle_input_method)  #半角/全角
-    # @sai define_key(keymap_emacs, "A-(25)", toggle_input_method)
+    # @sai define_key(keymap_emacs, "A-(25)", toggle_input_method)  #[Alt]+[半角／全角]
 
     # @sai define_key(keymap_ime,   "(243)",  toggle_input_method)  #半角/全角
     # @sai define_key(keymap_ime,   "(244)",  toggle_input_method)  #半角/全角
-    # @sai define_key(keymap_ime,   "A-(25)", toggle_input_method)
+    # @sai define_key(keymap_ime,   "A-(25)", toggle_input_method)  #[Alt]+[半角／全角]
 
     ## 「ファイル操作」のキー設定
     define_key(keymap_emacs, "Ctl-x C-f", reset_search(reset_undo(reset_counter(reset_mark(find_file)))))
