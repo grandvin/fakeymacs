@@ -75,7 +75,9 @@ fc.emacs_exclusion_key  = {"chrome.exe"       : ["C-l", "C-t"],
 # 左右どちらの Ctrlキーを使うかを指定する（"L": 左、"R": 右）
 # fc.side_of_ctrl_key = "L"
 
-fc.side_of_alt_key = "R" # @sai Chrome系で A-; が正しく判断されないための緊急回避作。Chrome系で何故 LAlt-; が正しく動かないか不明
+# fc.side_of_alt_key = "R" # @sai Chrome系で A-; が正しく判断されないための緊急回避作。Chrome系で何故 LAlt-; が正しく動かないか不明
+# 原因判明。本ファイル下部の 238行からの処理 vscode_key\config.py エクステンションが原因。よって、当該処理を無効化
+# todo: 後で根本原因を探ること
 
 # Escキーを Metaキーとして使うかどうかを指定する（True: 使う、False: 使わない）
 # （True（Metaキーとして使う）に設定されている場合、ESC の二回押下で ESC が入力されます）
@@ -234,7 +236,7 @@ fc.lancherList_listers = [
 # --------------------------------------------------------------------------------------------------
 
 # VSCode 用のキーの設定を行う
-if 1:
+if 0: # @sai 一時的に無効化 (∵ A-; が正しく動かなくなるため)
     fc.vscode_target  = ["Code.exe"]
     # vscode.dev 等、ブラウザで動作する VSCode で本機能を無効とするには、次の４行をコメントアウト
     # してください
