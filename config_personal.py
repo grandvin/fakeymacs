@@ -64,16 +64,18 @@ fc.skip_settings_key    = {"keymap_global"    : [], # 全画面共通 Keymap
 # Emacs のキーバインドにするアプリケーションソフトで、Emacs キーバインドから除外するキーを指定する
 # （リストに指定するキーは、Keyhac で指定可能なマルチストロークではないキーとしてください。
 #   Fakeymacs の記法の "M-f" や "Ctl-x d" などの指定はできません。"A-v"、"C-v" などが指定可能です。）
-fc.emacs_exclusion_key  = {"chrome.exe"       : ["C-l", "C-t", "A-;"],
-                           "vivaldi.exe"      : ["C-l", "C-t", "C-S-a", "A-;"],
-                           "sidekick.exe"      : ["C-l", "C-t", "C-S-a", "A-;"],
-                           "msedge.exe"       : ["C-l", "C-t", "A-;"],
-                           "firefox.exe"      : ["C-l", "C-t", "A-;"],
+fc.emacs_exclusion_key  = {"chrome.exe"       : ["C-l", "C-t"],
+                           "vivaldi.exe"      : ["C-l", "C-t", "C-S-a"],
+                           "sidekick.exe"      : ["C-l", "C-t", "C-S-a"],
+                           "msedge.exe"       : ["C-l", "C-t"],
+                           "firefox.exe"      : ["C-l", "C-t"],
                            "Code.exe"         : ["C-S-b", "C-S-f", "C-S-p", "C-S-n", "C-S-a", "C-S-e"],
                            }
 
 # 左右どちらの Ctrlキーを使うかを指定する（"L": 左、"R": 右）
-# fc.side_of_ctrl_key = "R"
+# fc.side_of_ctrl_key = "L"
+
+fc.side_of_alt_key = "R" # @sai Chrome系で A-; が正しく判断されないための緊急回避作。Chrome系で何故 LAlt-; が正しく動かないか不明
 
 # Escキーを Metaキーとして使うかどうかを指定する（True: 使う、False: 使わない）
 # （True（Metaキーとして使う）に設定されている場合、ESC の二回押下で ESC が入力されます）
@@ -146,7 +148,6 @@ fc.reverse_window_to_restore = False
 #define_key(keymap_global,  "(243)",  "b")  #半角/全角 不要
 #@sai define_key(keymap_global,  "(244)",  "Esc")  #半角/全角
 #define_key(keymap_emacs,  "A-k",  "A-k")
-
 
 ####################################################################################################
 ## クリップボードリストの設定
