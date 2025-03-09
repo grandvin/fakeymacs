@@ -383,7 +383,9 @@ def configure(keymap):
 
     # Emacs日本語入力モードが有効なときに表示するバルーンメッセージを指定する
     # fc.emacs_ime_mode_balloon_message = None
-    fc.emacs_ime_mode_balloon_message = "▲"
+    # fc.emacs_ime_mode_balloon_message = "▲"
+    fc.emacs_ime_mode_balloon_message = None
+
 
     # IME の状態を表示するバルーンメッセージを表示するかどうかを指定する（True: 表示する、False: 表示しない）
     fc.use_ime_status_balloon = True
