@@ -41,7 +41,10 @@ fc.ime = "Google_IME"
 
 # Emacs のキーバインドに“したくない”アプリケーションソフトを指定する
 # （Keyhac のメニューから「内部ログ」を ON にすると processname や classname を確認することができます）
-fc.not_emacs_target    += ["vmware-view.exe"]
+fc.not_emacs_target    += ["vmware-view.exe",
+                           "Windsurf.exe", 
+                           "Cursor.exe" 
+                          ]
 
 # IME の切り替え“のみをしたい”アプリケーションソフトを指定する
 # （指定できるアプリケーションソフトは、not_emacs_target で（除外）指定したものからのみとなります）
