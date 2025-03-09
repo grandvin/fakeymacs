@@ -42,6 +42,7 @@ fc.ime = "Google_IME"
 # Emacs のキーバインドに“したくない”アプリケーションソフトを指定する
 # （Keyhac のメニューから「内部ログ」を ON にすると processname や classname を確認することができます）
 fc.not_emacs_target    += ["vmware-view.exe",
+                           "RemoteDesktopManager.exe",
                            "Windsurf.exe", 
                            "Cursor.exe" 
                           ]
@@ -91,7 +92,7 @@ fc.use_emacs_ime_mode = True
 
 # Emacs日本語入力モードが有効なときに表示するバルーンメッセージを指定する
 fc.emacs_ime_mode_balloon_message = None
-#fc.emacs_ime_mode_balloon_message = "▲"
+# fc.emacs_ime_mode_balloon_message = "▲"
 
 
 # IME の状態を表示するバルーンメッセージを表示するかどうかを指定する（True: 表示する、False: 表示しない）
