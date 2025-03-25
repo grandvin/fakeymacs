@@ -43,8 +43,9 @@ fc.ime = "Google_IME"
 # （Keyhac のメニューから「内部ログ」を ON にすると processname や classname を確認することができます）
 fc.not_emacs_target    += ["vmware-view.exe",
                            "RemoteDesktopManager.exe",
-                           "Windsurf.exe", 
-                           "Cursor.exe" 
+                           "Windsurf.exe",
+                           "Cursor.exe",
+                           "Code.exe"
                           ]
 
 # IME の切り替え“のみをしたい”アプリケーションソフトを指定する
